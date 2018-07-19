@@ -1,0 +1,882 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3B51002A-6CF2-4D32-B95B-2DD5E25E7CF1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>USMT_GUI</RootNamespace>
+    <AssemblyName>USMT GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="USMT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USMT.Designer.cs">
+      <DependentUpon>USMT.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="USMT.resx">
+      <DependentUpon>USMT.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\USMT.datasource" />
+    <None Include="Properties\DataSources\USMT_GUI.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\USMT_GUI.Properties.Settings.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="User State Migration Tool\amd64\DLManifests\International-TimeZones-DL.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\MigXML.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\Application-Experience-Program-Compatibility-Assistant-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\eudcedit-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\ExtensibleAuthenticationProtocolHostService-Rep.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\International-Core-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\Microsoft-Windows-Fax-Service-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\Microsoft-Windows-IE-InternetExplorer-repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\Microsoft-Windows-NETFX35CDFComp-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\Microsoft-Windows-OfflineFiles-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\Microsoft-Windows-WCFCoreComp-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\mmsys-Migration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\odbc32dll-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\Printing-LocalPrinting-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\RasApi-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\RasmanService-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\Rasppp-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\Rights-Management-Client-v1-API-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\shmig-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\sounds-Migration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\stickyNotes-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\sysdm-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\SysMain-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\TabletPCStickyNotes-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\TerminalServices-AppServer-Licensing-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\TerminalServices-LicenseServer-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\TerminalServices-Manager-SnapIn-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\TerminalServices-RAPWebPart-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\WCF-HTTP-Activation-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\WCF-NonHTTP-Activation-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\WindowsSearchEngine-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests7\WSRM-Service-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\Application-Experience-Program-Compatibility-Assistant-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\CAPI2_certs-repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\CertificateEnrollment-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\DataIntegrityScan-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\DisplayConfigSettings_Win7Update.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\eudcedit-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\explorer-repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\ExtensibleAuthenticationProtocolHostService-Rep.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\IdentityServer-Migration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\IdentityServer-ProxyMigration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\International-Core-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\Internet-Naming-Service-Runtime-Rep.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\mfmpeg2srcsnk-migration-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\mfsrcsnk-migration-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\Microsoft-Windows-Fax-Service-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\Microsoft-Windows-Identity-Foundation-Migration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\Microsoft-Windows-IE-InternetExplorer-repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\Microsoft-Windows-NETFX35CDFComp-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\Microsoft-Windows-OfflineFiles-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\Microsoft-Windows-ServerManager-Shell-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\Microsoft-Windows-WCFCoreComp-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\mmsys-Migration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\msmpeg2vdec-migration-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\Netfx4-Policy-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\odbc32dll-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\PeerDist-Client-Migration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\PeerDist-Server-Migration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\Printing-LocalPrinting-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\RasApi-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\RasBase-Rassstp-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\RasBase-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\RasmanService-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\RasmanService-ReplV2.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\Rasppp-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\RasRqs-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\ReFS-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\Rights-Management-Client-v1-API-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\shmig-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\sounds-Migration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\stickyNotes-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\sysdm-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\SysMain-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\TabletPCStickyNotes-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\TerminalServices-AppServer-Licensing-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\TerminalServices-LicenseServer-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\TerminalServices-RAPWebPart-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\TerminalServices-RDP-WinStationExtensions-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\TerminalServices-SessionDirectory-Client-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\UDFS-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\UPnPDeviceHost-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\UPnPSSDP-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\VirtualDiskService-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\WCF-HTTP-Activation-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\WCF-NonHTTP-Activation-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\WindowsSearchEngine-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\Winlogon-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\winmde-migration-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\ReplacementManifests\wlidsvc.vista-win7.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\SFCN.DAT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\SFLCID.DAT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\SFLISTW7.DAT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\SFLISTW8.DAT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\SFLISTW8.WOA.DAT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\SFLISTWB.DAT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\SFLISTWB.WOA.DAT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\amd64\usmtutils.log">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\DLManifests\International-TimeZones-DL.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\MigXML.xsd">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\Application-Experience-Program-Compatibility-Assistant-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\eudcedit-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\ExtensibleAuthenticationProtocolHostService-Rep.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\International-Core-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\Microsoft-Windows-Fax-Service-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\Microsoft-Windows-IE-InternetExplorer-repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\Microsoft-Windows-NETFX35CDFComp-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\Microsoft-Windows-OfflineFiles-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\Microsoft-Windows-WCFCoreComp-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\mmsys-Migration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\odbc32dll-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\Printing-LocalPrinting-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\RasApi-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\RasmanService-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\Rasppp-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\Rights-Management-Client-v1-API-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\shmig-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\sounds-Migration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\stickyNotes-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\sysdm-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\SysMain-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\TabletPCStickyNotes-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\TerminalServices-AppServer-Licensing-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\TerminalServices-LicenseServer-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\TerminalServices-Manager-SnapIn-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\TerminalServices-RAPWebPart-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\WCF-HTTP-Activation-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\WCF-NonHTTP-Activation-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\WindowsSearchEngine-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests7\WSRM-Service-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\Application-Experience-Program-Compatibility-Assistant-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\CAPI2_certs-repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\CertificateEnrollment-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\DataIntegrityScan-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\DisplayConfigSettings_Win7Update.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\eudcedit-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\explorer-repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\ExtensibleAuthenticationProtocolHostService-Rep.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\IdentityServer-Migration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\IdentityServer-ProxyMigration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\International-Core-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\Internet-Naming-Service-Runtime-Rep.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\mfmpeg2srcsnk-migration-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\mfsrcsnk-migration-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\Microsoft-Windows-Fax-Service-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\Microsoft-Windows-Identity-Foundation-Migration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\Microsoft-Windows-IE-InternetExplorer-repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\Microsoft-Windows-NETFX35CDFComp-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\Microsoft-Windows-OfflineFiles-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\Microsoft-Windows-ServerManager-Shell-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\Microsoft-Windows-WCFCoreComp-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\mmsys-Migration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\msmpeg2vdec-migration-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\Netfx4-Policy-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\odbc32dll-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\PeerDist-Client-Migration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\PeerDist-Server-Migration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\Printing-LocalPrinting-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\RasApi-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\RasBase-Rassstp-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\RasBase-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\RasmanService-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\RasmanService-ReplV2.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\Rasppp-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\RasRqs-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\ReFS-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\Rights-Management-Client-v1-API-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\shmig-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\sounds-Migration-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\stickyNotes-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\sysdm-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\SysMain-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\TabletPCStickyNotes-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\TerminalServices-AppServer-Licensing-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\TerminalServices-LicenseServer-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\TerminalServices-RAPWebPart-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\TerminalServices-RDP-WinStationExtensions-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\TerminalServices-SessionDirectory-Client-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\UDFS-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\UPnPDeviceHost-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\UPnPSSDP-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\VirtualDiskService-Repl.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\WCF-HTTP-Activation-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\WCF-NonHTTP-Activation-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\WindowsSearchEngine-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\Winlogon-Replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\winmde-migration-replacement.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\ReplacementManifests\wlidsvc.vista-win7.man">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\SFCN.DAT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\SFLCID.DAT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\SFLISTW7.DAT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\SFLISTW8.DAT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\SFLISTW8.WOA.DAT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\SFLISTWB.DAT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="User State Migration Tool\x86\SFLISTWB.WOA.DAT">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="User State Migration Tool\amd64\cmi2migxml.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\csiagent.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\loadstate.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\MigApp.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\migcore.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\MigDocs.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\mighost.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\migres.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\migstore.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\migsys.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\MigUser.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\mxeagent.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\ReplacementManifests7\microsoft-international-core\nlscoremig.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\ReplacementManifests7\Microsoft-Windows-shmig\shmig.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\ReplacementManifests7\Microsoft-Windows-TerminalServices-LicenseServer\TlsRepPlugin.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\ReplacementManifests7\WindowsSearchEngine\WSearchMigPlugin.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\ReplacementManifests\microsoft-international-core\nlscoremig.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\ReplacementManifests\Microsoft-Windows-OfflineFiles-Core\cscmig.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\ReplacementManifests\Microsoft-Windows-shmig\shmig.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\ReplacementManifests\WindowsSearchEngine\WSearchMigPlugin.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\scanstate.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\SFPAT.INF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\SFPATPG.INF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\SFPATW7.INF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\SFPATW8.INF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\SFPATWB.INF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\unbcl.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\usmtutils.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\amd64\wdscore.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\cmi2migxml.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\csiagent.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\loadstate.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\MigApp.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\migcore.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\MigDocs.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\mighost.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\migres.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\migstore.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\migsys.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\MigUser.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\mxeagent.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\ReplacementManifests7\microsoft-international-core\nlscoremig.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\ReplacementManifests7\Microsoft-Windows-shmig\shmig.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\ReplacementManifests7\Microsoft-Windows-TerminalServices-LicenseServer\TlsRepPlugin.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\ReplacementManifests7\WindowsSearchEngine\WSearchMigPlugin.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\ReplacementManifests\microsoft-international-core\nlscoremig.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\ReplacementManifests\Microsoft-Windows-OfflineFiles-Core\cscmig.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\ReplacementManifests\Microsoft-Windows-shmig\shmig.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\ReplacementManifests\WindowsSearchEngine\WSearchMigPlugin.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\scanstate.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\SFPAT.INF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\SFPATPG.INF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\SFPATW7.INF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\SFPATW8.INF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\SFPATWB.INF">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\unbcl.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\usmtutils.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="User State Migration Tool\x86\wdscore.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
